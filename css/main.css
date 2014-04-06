@@ -1,0 +1,88 @@
+body {
+  margin:0px 0px 50px 0px;
+  padding:0px;
+  font-family:'Apple SD Gothic Neo', 'Nanum Gothic';
+  font-weight:300;
+}
+
+.container {
+  width:550px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.logo {
+  margin-top:40px;  
+}
+
+.logo img {
+  width:220px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.entry h2 {
+  font-weight:200;
+  font-size:2.0em;
+  font-family:'Domine';
+  margin-bottom:5px;
+  text-align:center;
+}
+
+.entry .date-and-author {
+  margin-bottom:20px;
+  text-align:center;
+}
+
+.entry p {
+  margin-bottom:20px;
+}
+
+.entry .article {
+  margin-bottom:30px;
+}
+
+.header {
+  margin-top:40px;
+  text-align:center;
+}
+
+.header img {
+  display: block;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.header .sublogo {
+  margin-top:20px;
+  margin-bottom:10px;
+}
+
+.header .pixelated {
+  margin-bottom:80px;
+}
+
+.header .pixelated {
+  font-family: arial, verdana;
+  font-size:10px;
+}
+
+.entry img {
+  width:100%;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  .container {
+    width:auto;
+    padding-left:12px;
+    padding-right:12px;
+  }
+  .entry h2 {
+  }
+  .header .pixelated {
+    margin-bottom:30px;
+  }
+}

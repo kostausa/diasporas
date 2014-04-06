@@ -1,0 +1,5 @@
+name: Diasporas Blog
+url: "http://diasporas.cc"
+description: "Collecting the dots for diasporas"
+markdown: redcarpet
+pygments: true
