@@ -5,6 +5,14 @@ body {
   font-weight:300;
 }
 
+body a {
+  color:#26c;
+}
+
+body a:visited {
+  color:#549;
+}
+
 .container {
   width:550px;
   margin-left:auto;
@@ -27,12 +35,22 @@ body {
   font-size:2.0em;
   font-family:'Domine';
   margin-bottom:5px;
-  text-align:center;
+  text-align:left;
 }
 
-.entry .date-and-author {
-  margin-bottom:20px;
-  text-align:center;
+.entry .date-posted {
+  margin-bottom:30px;
+  text-align:left;
+  font-family:'helvetica';
+  font-size:0.9em;
+}
+
+.entry .info {
+  font-family:'helvetica neue';
+  font-size:0.8em;
+  text-align:right;
+  margin-bottom:50px;
+  font-weight:400;
 }
 
 .entry p {
@@ -40,7 +58,7 @@ body {
 }
 
 .entry .article {
-  margin-bottom:30px;
+  margin-bottom:10px;
 }
 
 .header {
@@ -65,11 +83,15 @@ body {
 
 .header .pixelated {
   font-family: arial, verdana;
-  font-size:10px;
+  font-size:11px;
 }
 
 .entry img {
   width:100%;
+}
+
+.archive-entry {
+  font-family: 'domine';
 }
 
 @media only screen 
