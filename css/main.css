@@ -94,6 +94,39 @@ body a:visited {
   font-family: 'domine';
 }
 
+.about {
+  font-weight:300;
+  font-size:1.0em;
+}
+
+.about h2 {
+  font-family:'Domine';
+  font-size:2.0em;
+}
+
+.about a, .about a:visited {
+  font-family: 'helvetica neue';
+  color:#008;
+  font-weight:300;
+}
+
+.footnote {
+  margin-top:50px;
+  font-family:arial;
+  font-size:11px;
+}
+
+.footnote li {
+  margin-bottom:7px;
+}
+
+.footnote hr {
+  background:#eee; 
+  border:0; 
+  height:3px; 
+  margin-bottom:10px;
+}
+
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 480px) {
