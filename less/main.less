@@ -1,130 +1,163 @@
+// common variables
+@link-blue: #26c;
+@link-blue-visited: #549;
+@container-width: 550px;
+
+// fonts
+@font-swiss-thin:    'Helvetica Neue';
+@font-swiss-regular: 'Helvetica';
+@font-plain-looking: 'Arial', 'Verdana';
+@font-fancy-title:   'Domine';
+@font-good-hangul:   'Apple SD Gothic Neo', 'Nanum Gothic';
+
+// default font chain
+@font-chain:          @font-good-hangul, 
+                      @font-swiss-thin, 
+                      @font-swiss-regular, 
+                      @font-plain-looking;
+
+// rooms
+@room-thin:   10px;
+@room-normal: 30px;
+@room-more:   50px;
+@room-super:  80px;
+
+// mixins
+.side-margin(@left: auto;@right: auto) {
+  margin-left: @left;
+  margin-right: @right;
+}
+
+.side-padding(@left: 0px; @right: 0px) {
+  padding-left: @left;
+  padding-right: @right;
+}
+
+// beginning of css rules
+
 body {
-  margin:0px 0px 50px 0px;
+  margin:0px 0px @room-more 0px;
   padding:0px;
-  font-family:'Apple SD Gothic Neo', 'Nanum Gothic';
+  font-family: @font-chain;
   font-weight:300;
-}
 
-body a {
-  color:#26c;
-}
+  a {
+    color: @link-blue;
+  }
 
-body a:visited {
-  color:#549;
+  a:visited {
+    color: @link-blue-visited;
+  }
 }
 
 .container {
-  width:550px;
-  margin-left:auto;
-  margin-right:auto;
+  width: @container-width;
+  .side-margin(auto; auto);
 }
 
 .logo {
-  margin-top:40px;  
+  margin-top:40px; 
+
+  img {
+    width:220px;
+    display:block;
+    .side-margin(auto; auto);
+  } 
 }
 
-.logo img {
-  width:220px;
-  display:block;
-  margin-left:auto;
-  margin-right:auto;
-}
+.entry {
+  img {
+    width: 100%;
+  }
+  
+  h2 {
+    font-size:2.0em;
+    font-weight:200;
+    font-family:@font-fancy-title;
+    text-align:left;
+    margin-bottom:5px;
+  }
 
-.entry h2 {
-  font-weight:200;
-  font-size:2.0em;
-  font-family:'Domine';
-  margin-bottom:5px;
-  text-align:left;
-}
+  .date-posted {
+    font-size:0.9em;
+    font-family:@font-swiss-regular;
+    text-align:left;
+    margin-bottom: @room-normal;
+  }
 
-.entry .date-posted {
-  margin-bottom:30px;
-  text-align:left;
-  font-family:'helvetica';
-  font-size:0.9em;
-}
+  .info {
+    font-size:0.8em;
+    font-weight:400;
+    font-family:@font-swiss-thin;
+    text-align:right;
+    margin-bottom:@room-more;
+  }
 
-.entry .info {
-  font-family:'helvetica neue';
-  font-size:0.8em;
-  text-align:right;
-  margin-bottom:50px;
-  font-weight:400;
-}
+  p {
+    margin-bottom:20px;
+  }
 
-.entry p {
-  margin-bottom:20px;
-}
-
-.entry .article {
-  margin-bottom:10px;
+  .article {
+    margin-bottom:@room-thin;
+  }
 }
 
 .header {
-  margin-top:40px;
+  margin-top:@room-normal;
   text-align:center;
-}
 
-.header img {
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
-}
+  img {
+    display: block;
+    .side-margin(auto; auto);
+  }
 
-.header .sublogo {
-  margin-top:20px;
-  margin-bottom:10px;
-}
+  .sublogo {
+    margin-top:20px;
+    margin-bottom:10px;
+  }
 
-.header .pixelated {
-  margin-bottom:80px;
-}
-
-.header .pixelated {
-  font-family: arial, verdana;
-  font-size:11px;
-}
-
-.entry img {
-  width:100%;
-}
-
-.archive-entry {
-  font-family: 'domine';
+  .pixelated {
+    margin-bottom:@room-super;
+    font-family: @font-plain-looking;
+    font-size:11px;
+  }
 }
 
 .about {
   font-weight:300;
   font-size:1.0em;
-}
 
-.about h2 {
-  font-family:'Domine';
-  font-size:2.0em;
-}
+  h2 {
+    font-family:@font-fancy-title;
+    font-size:2.0em;
+  }
 
-.about a, .about a:visited {
-  font-family: 'helvetica neue';
-  color:#008;
-  font-weight:300;
+  a, a:visited {
+    font-family:@font-swiss-thin;
+    color:#008;
+    font-weight:300;
+  }
 }
 
 .footnote {
-  margin-top:50px;
+  margin-top:@room-more;
   font-family:arial;
   font-size:11px;
+
+  li {
+    margin-bottom:7px;
+  }
+
+  hr {
+    background:#eee; 
+    border:0; 
+    height:3px; 
+    margin-bottom:@room-thin;
+  }
 }
 
-.footnote li {
-  margin-bottom:7px;
-}
-
-.footnote hr {
-  background:#eee; 
-  border:0; 
-  height:3px; 
-  margin-bottom:10px;
+.archive-entry {
+  font-family:@font-fancy-title;
 }
 
 @media only screen 
@@ -132,12 +165,9 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) {
   .container {
     width:auto;
-    padding-left:12px;
-    padding-right:12px;
-  }
-  .entry h2 {
+    .side-padding(12px;12px);
   }
   .header .pixelated {
-    margin-bottom:30px;
+    margin-bottom: @room-normal;
   }
 }
