@@ -1,6 +1,7 @@
 {% include identity.html %}
 
 <div class="entry">
+  
   <h2>{{post.title}}</h2>
   <div class="date-posted">
     &mdash; {{ post.date | date: '%B %d, %Y %I:%M %p' }} PST
@@ -18,6 +19,7 @@
   </div>
 
   <div id="disqus_thread"></div>
+
   <script type="text/javascript">
     var disqus_shortname = 'diasporas'; 
     var disqus_title = '{{post.title}}';
@@ -28,5 +30,6 @@
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
     })();
- </script>
+  </script>
+
 </div> <!-- end of entry -->
