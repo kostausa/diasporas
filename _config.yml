@@ -7,3 +7,4 @@ timezone: America/Los_Angeles
 exclude:
   - less
   - workspace
+  - design

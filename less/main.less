@@ -110,6 +110,7 @@ h3 {
   }
 
   .info {
+    margin-top:@room-normal;
     font-size:@size-small;
     font-weight:@weight-medium;
     font-family:@font-swiss-thin;
@@ -124,6 +125,10 @@ h3 {
   .article {
     margin-bottom:@room-thin;
   }
+
+  a         { color:@link-blue; }
+  a:visited { color:@link-blue; }
+
 }
 
 .header {
@@ -151,6 +156,14 @@ h3 {
   a, a:visited {
     font-family:@font-swiss-thin;
     font-weight:@weight-normal;
+  }
+}
+
+hr + ol {
+  font-family:@font-plain-looking;
+  font-size:@size-tiny;
+  li {
+    margin-bottom:@room-bare;
   }
 }
 
@@ -201,6 +214,7 @@ hr {
 
 .archive-entry {
   font-family:@font-fancy-title;
+  margin-bottom:5px;
 }
 
 ////////////////////////////
