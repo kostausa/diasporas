@@ -1,5 +1,5 @@
 ////////////////////////////
-//                        // 
+//                        //
 // variable definitions   //
 //                        //
 ////////////////////////////
@@ -9,6 +9,10 @@
 @link-blue-visited: #549;
 @container-width:   550px;
 
+// colors
+@blockquote-bg: #fcf8e3;
+@blockquote-border: darken(spin(@blockquote-bg, -10), 20%);
+
 // fonts
 @font-swiss-thin:    'Helvetica Neue';
 @font-swiss-regular: 'Helvetica';
@@ -16,10 +20,15 @@
 @font-fancy-title:   'Domine';
 @font-good-hangul:   'Apple SD Gothic Neo', 'Nanum Gothic';
 
+// font and line height
+@font-size-base: 14px;
+@line-height-base: 1.428571429;
+@line-height-computed: floor((@font-size-base * @line-height-base));
+
 // default font chain
-@font-chain:          @font-good-hangul, 
-                      @font-swiss-thin, 
-                      @font-swiss-regular, 
+@font-chain:          @font-good-hangul,
+                      @font-swiss-thin,
+                      @font-swiss-regular,
                       @font-plain-looking;
 
 // rooms
@@ -39,7 +48,7 @@
 
 // font sizes
 @size-tiny:    11px;
-@size-small:  0.8em;
+@size-small:  0.9em;
 @size-normal: 1.0em;
 @size-medium: 1.6em;
 @size-big:    2.0em;
@@ -56,7 +65,7 @@
 }
 
 ////////////////////////////
-//                        // 
+//                        //
 // beginning of css rules //
 //                        //
 ////////////////////////////
@@ -64,8 +73,10 @@
 body {
   margin:@room-zip @room-zip @room-more @room-zip;
   padding:@room-zip;
+  font-size: @font-size-base;
   font-family:@font-chain;
   font-weight:@weight-normal;
+  line-height: @line-height-computed;
 }
 
 a         { color:@link-blue; }
@@ -95,14 +106,14 @@ h3 {
     width:220px;
     display:block;
     .side-margin(auto; auto);
-  } 
+  }
 }
 
 .entry {
   img {
     width: 100%;
   }
-  
+
   .date-posted {
     font-size:@size-small;
     font-family:@font-swiss-regular;
@@ -173,6 +184,7 @@ hr + ol {
   font-size:@size-tiny;
 
   li {
+    line-height:1.5;
     margin-bottom:@room-bare;
   }
 
@@ -198,7 +210,7 @@ hr + ol {
   .info {
 
     margin-top:7px;
-  } 
+  }
   .download {
     margin-top:10px;
     font-family:@font-plain-looking;
@@ -206,9 +218,9 @@ hr + ol {
 }
 
 hr {
-  background:#eee; 
-  border:0; 
-  height:3px; 
+  background:#eee;
+  border:0;
+  height:3px;
   margin-bottom:@room-thin;
 }
 
@@ -217,15 +229,26 @@ hr {
   margin-bottom:5px;
 }
 
+blockquote {
+  border-left: 4px solid @blockquote-border;
+  background-color: @blockquote-bg;
+  margin:0px;
+  p {
+    font-style: italic;
+    font-size:13px;
+    padding:20px;
+  }
+}
+
 ////////////////////////////
-//                        // 
+//                        //
 // media queries          //
 //                        //
 ////////////////////////////
 
 // smartphones
-@media only screen 
-and (min-device-width : 320px) 
+@media only screen
+and (min-device-width : 320px)
 and (max-device-width : 480px) {
   h2 {
     font-size: @size-medium;
